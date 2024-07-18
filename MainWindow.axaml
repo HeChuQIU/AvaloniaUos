@@ -2,8 +2,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="250" d:DesignHeight="300"
+        Width="250" Height="300"
         x:Class="AvaloniaUos.MainWindow"
         Title="AvaloniaUos">
-    Welcome to Avalonia!
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Margin="0,16" FontSize="24">连接到Windows主机</TextBlock>
+            <TextBox Name="AddressText" Margin="4,8" Watermark="&lt;主机地址&gt;:&lt;端口号&gt;" />
+            <TextBox Name="UsernameText" Margin="4,8" Watermark="&lt;主机用户名&gt;" />
+            <TextBox Name="PasswordText" Margin="4,8" Watermark="&lt;主机密码&gt;" PasswordChar="*" />
+            <CheckBox Name="DriveCheck" Margin="4,8">映射本地磁盘</CheckBox>
+            <Button Name="ConnectButton" Click="ConnectButton_OnClick" Content="连接" />
+        </StackPanel>
+    </Grid>
 </Window>

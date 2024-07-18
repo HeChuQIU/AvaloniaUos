@@ -1,0 +1,9 @@
+﻿[Desktop Entry]
+Name=AvaloniaUos
+Name[zh_CN]=AvaloniaUos
+Type=Application
+Terminal=false
+Categories=Utility;
+Exec=/usr/share/AvaloniaUos/AvaloniaUos %U
+Icon=/usr/share/icons/avaloniaUosLogo.png
+comment[zh_CN]=测试软件

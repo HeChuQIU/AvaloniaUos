@@ -6,14 +6,41 @@
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationManifest>app.manifest</ApplicationManifest>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        
+        <AppId>com.hechu.demo</AppId>
+        <UOSDebVersion>1.0.8</UOSDebVersion>
+        <AppName>AvaloniaUos</AppName>
+        <AppNameZhCN>AvaloniaUos</AppNameZhCN>
+        <Png32x32IconFile>Logo32.png</Png32x32IconFile>
+        <DesktopComment>The AvaloniaUos</DesktopComment>
+        <DesktopCommentZhCN>AvaloniaUos 测试</DesktopCommentZhCN>
+        <DebControlDescription>“凉宫春日觉得能赢的队”作品</DebControlDescription>
+        <DebControlHomepage>https://github.com</DebControlHomepage>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.0.10"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.0.10"/>
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10"/>
-        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10"/>
+        <PackageReference Include="Avalonia" Version="11.0.11" />
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.11" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.11" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.11" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10"/>
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.11" />
+        <PackageReference Include="DialogHost.Avalonia" Version="0.7.9" />
+        <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
+        <PackageReference Include="Packaging.DebUOS" Version="3.16.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="AvaloniaUos.desktop" CopyToPublishDirectory="PreserveNewest">
+            <LinuxPath>/usr/share/applications/AvaloniaUos.desktop</LinuxPath>
+        </Content>
+        <Content Update="Logo.png">
+          <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+          <LinuxPath>/usr/share/icons/avaloniaUosLogo.png</LinuxPath>
+        </Content>
+    </ItemGroup>
+
 </Project>
